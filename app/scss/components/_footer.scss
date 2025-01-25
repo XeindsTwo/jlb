@@ -33,6 +33,7 @@
     font-weight: 500;
     line-height: 1;
     max-width: 665px;
+    font-family: $suisseFont;
     letter-spacing: -0.48px;
     margin-bottom: 52px;
     @include r($desktop) {
@@ -79,7 +80,7 @@
     padding: 14px 24px;
     border-radius: 80px;
     color: $white;
-    border: 1px solid #D2D2D2;
+    border: 1px solid rgba(#D2D2D2, .45);
     transition: border .4s, color .4s, background-color .4s;
     @media (max-width: 410px) {
       padding: 13px 20px;

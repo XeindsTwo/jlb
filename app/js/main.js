@@ -21,7 +21,7 @@ function scrollToTarget(targetId) {
     headerNav.classList.remove('active');
     menuBtn.classList.remove('active');
     setTimeout(() => {
-      const targetOffset = targetSection.offsetTop - 50;
+      const targetOffset = targetSection.offsetTop - 30;
       window.scrollTo({top: targetOffset, behavior: 'smooth'});
     }, 400);
   }
@@ -50,11 +50,33 @@ document.querySelectorAll(".desktop").forEach(link => {
     const targetSection = document.getElementById(targetId);
 
     if (targetSection) {
-      const offsetTop = targetSection.getBoundingClientRect().top + window.scrollY - 40;
+      const offsetTop = targetSection.getBoundingClientRect().top + window.scrollY - 30;
 
       window.scrollTo({
         top: offsetTop,
         behavior: "smooth"
+      });
+    }
+  });
+});
+
+document.querySelectorAll('[data-copy-ca]').forEach(button => {
+  button.addEventListener('click', () => {
+    const copyIcon = button.querySelector('.copy-icon');
+    const okayIcon = button.querySelector('.okay-icon');
+    const contractText = button.dataset.contract;
+
+    if (contractText) {
+      navigator.clipboard.writeText(contractText).then(() => {
+        copyIcon.style.display = 'none';
+        okayIcon.style.display = 'block';
+
+        setTimeout(() => {
+          copyIcon.style.display = 'block';
+          okayIcon.style.display = 'none';
+        }, 3000);
+      }).catch(err => {
+        console.error('Failed to copy text to clipboard:', err);
       });
     }
   });

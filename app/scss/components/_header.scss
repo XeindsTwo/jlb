@@ -1,25 +1,29 @@
 .header {
-  padding: 16px 0 70px;
-  @include r($phone) {
-    padding-bottom: 55px;
+  padding: 30px 0 50px;
+  @include r($tablet) {
+    padding: 22px 0 50px;
+  }
+  @media (max-width: 530px) {
+    padding-top: 18px;
   }
 
   &__inner {
-    @include flex-between-center-gap(30);
-    @media (max-width: 1060px) {
+    @include flex-align-center(20);
+    @media (max-width: 760px) {
       position: relative;
+      gap: 15px;
       z-index: 50;
     }
   }
 
   &__nav {
-    @media (max-width: 1060px) {
+    @media (max-width: 760px) {
       display: none;
     }
 
     &.mobile {
       display: none;
-      @media (max-width: 1060px) {
+      @media (max-width: 760px) {
         display: block;
       }
     }
@@ -27,25 +31,23 @@
 
   &__logo {
     display: flex;
+    gap: 20px;
+    position: relative;
 
-    a {
-      border: 1px solid transparent;
-      border-radius: 4px;
-      transition: opacity .4s, border .4s;
-
-      &:hover {
-        opacity: .7;
-      }
-
-      &:focus {
-        border-color: $white;
+    &::after {
+      content: "";
+      display: flex;
+      width: 1px;
+      background-color: rgba($black, .4);
+      @media (max-width: 760px) {
+        display: none;
       }
     }
   }
 
   &__list {
-    @include flex-align-center(24);
-    @media (max-width: 1060px) {
+    @include flex-align-center(18);
+    @media (max-width: 760px) {
       flex-direction: column;
       align-items: flex-start;
       gap: 32px;
@@ -57,16 +59,13 @@
 
   &__link {
     @include flex-align-center(7);
-    color: rgba($white, .6);
+    color: rgba($black, .7);
     border: 1px solid transparent;
-    padding: 1px 2px;
+    padding: 1px 3px;
     border-radius: 5px;
     font-weight: 500;
     transition: color .4s, border .4s;
-    @media (max-width: 1060px) {
-      font-size: 20px;
-    }
-    @include r($tablet) {
+    @media (max-width: 760px) {
       font-size: 18px;
     }
     @include r($phone) {
@@ -74,7 +73,7 @@
     }
 
     &:hover {
-      color: $white;
+      color: $black;
 
       svg path {
         fill-opacity: 1;
@@ -83,7 +82,7 @@
 
     &:focus {
       border-color: $accent;
-      color: $white;
+      color: $black;
 
       svg path {
         fill: $white;
@@ -114,14 +113,9 @@
   }
 
   &__btn {
-    @media (max-width: 1060px) {
+    margin-left: auto;
+    @media (max-width: 760px) {
       align-self: stretch;
-    }
-    @include r($sm) {
-      align-self: center;
-    }
-    @include r($phone) {
-      padding: 8px 14px;
     }
   }
 
@@ -136,11 +130,11 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #11111d;
+    background-color: #dadada;
     transform: translateX(100%);
     height: 100vh;
     transition: transform .7s ease-in-out;
-    @media (max-width: 1060px) {
+    @media (max-width: 760px) {
       display: flex;
       align-items: flex-start;
       pointer-events: auto;

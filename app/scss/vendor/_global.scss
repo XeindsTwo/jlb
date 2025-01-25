@@ -90,16 +90,12 @@
   overflow: hidden;
 }
 
-::-webkit-scrollbar {
-  width: 5px;
+.copy-icon {
+
 }
 
-::-webkit-scrollbar-track {
-  background-color: rgba($accent, .3);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: $accent;
+.okay-icon {
+  display: none;
 }
 
 ::selection {

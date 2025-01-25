@@ -3,25 +3,32 @@
   display: flex;
   gap: 8px;
   max-width: max-content;
-  font-weight: 500;
-  line-height: 1.55;
-  background-color: $accent;
+  line-height: 1;
+  background-color: #F2F2F2;
   color: $black;
   justify-content: center;
   border: 1px solid transparent;
-  border-radius: 6px;
-  padding: 8px 18px;
+  border-radius: 57px;
+  padding: 11px 19px;
   transition: background-color .4s, border .4s, color .4s;
 
   &:hover {
-    background-color: $white;
+    background-color: transparent;
+    border-color: $accent;
     color: $black;
-    border-color: transparent;
+
+    svg path {
+      fill: $black;
+    }
   }
 
   &:focus {
-    background-color: transparent;
-    border-color: $accent;
+    background-color: $black;
     color: $white;
+    border-color: transparent;
+
+    svg path {
+      fill: $white;
+    }
   }
 }

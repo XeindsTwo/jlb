@@ -8,9 +8,9 @@
   justify-content: center;
   position: relative;
   border-radius: 50%;
-  padding: 18px 15px;
+  padding: 18px 10px;
   transition: all .4s;
-  background-color: $white50;
+  background-color: #f2f2f2;
   border: 1px solid transparent;
 
   &:hover {
@@ -68,7 +68,7 @@
 
   &.active {
     background-color: transparent;
-    border-color: $accent;
+    border-color: $black;
 
     .menu-btn__line {
       background: transparent;
@@ -79,14 +79,14 @@
         margin-top: 0;
         transform: rotate(-45deg);
         transition-delay: .4s;
-        background-color: $white;
+        background-color: $black;
       }
 
       &::after {
         margin-top: 0;
         transform: rotate(45deg);
         transition-delay: .4s;
-        background-color: $white;
+        background-color: $black;
       }
     }
   }

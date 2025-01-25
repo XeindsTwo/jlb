@@ -81,6 +81,7 @@
   }
 
   &__name {
+    font-family: $suisseFont;
     font-size: 18px;
     font-weight: 500;
     line-height: 1.4;
@@ -100,7 +101,7 @@
       margin-top: -12px;
       padding: 8px 12px;
       border-radius: 12px;
-      background-image: url("../../images/decor-roadmap.png");
+      background-image: url("../images/decor-roadmap.webp");
       color: $white;
 
       span {
@@ -122,6 +123,7 @@
 
   &__plan {
     @include flex-align-center(10);
+    font-family: $suisseFont;
     padding: 8px 16px;
     border-radius: 62px;
     border: 1px solid rgba(#E0E0E0, .7);

@@ -67,24 +67,21 @@
     @media (max-width: 860px) {
       font-size: 76px;
     }
-    @include r($tablet) {
-      font-size: 68px;
-    }
     @include r($sm) {
-      font-size: 64px;
+      font-size: 68px;
       margin-bottom: 60px;
     }
     @media (max-width: 530px) {
-      font-size: 58px;
+      font-size: 62px;
     }
     @media (max-width: 420px) {
-      font-size: 54px;
+      font-size: 58px;
     }
     @media (max-width: 400px) {
-      font-size: 50px;
+      font-size: 54px;
     }
     @media (max-width: 360px) {
-      font-size: 48px;
+      font-size: 50px;
     }
   }
 
@@ -188,5 +185,6 @@
 
   &__text {
     color: rgba($white, .8);
+    font-family: $suisseFont;
   }
 }
