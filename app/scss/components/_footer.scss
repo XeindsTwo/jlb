@@ -1,0 +1,166 @@
+.footer {
+  background-color: $black;
+  padding-top: 115px;
+  padding-bottom: 20px;
+  color: $white;
+
+  &__top {
+    max-width: 845px;
+    margin: 0 auto 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 1;
+    max-width: 665px;
+    letter-spacing: -0.48px;
+    margin-bottom: 52px;
+  }
+
+  &__exchanges {
+    @include flex-align-center(14);
+    margin-bottom: 60px;
+  }
+
+  &__exchange {
+    @include flex-align-center(9);
+    padding: 14px 24px;
+    border-radius: 80px;
+    border: 1px solid #D2D2D2;
+    transition: border .4s, color .4s, background-color .4s;
+
+    &:hover {
+      color: $accent;
+
+      svg path {
+        fill: $accent;
+      }
+    }
+
+    &:focus {
+      border-color: $accent;
+      background-color: $accent;
+      color: $white;
+
+      svg path {
+        fill: $white;
+      }
+    }
+
+    &.white {
+      background-color: $white;
+      color: $black;
+
+      &:hover {
+        background-color: $accent;
+        border-color: transparent;
+        color: $white;
+
+        svg path {
+          fill: $white;
+        }
+      }
+
+      &:focus {
+        border-color: $accent;
+        background-color: transparent;
+        color: $white;
+
+        svg path {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    color: rgba($white, .4);
+    margin-bottom: 24px;
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    font-family: $suisseFont;
+  }
+
+  &__socials {
+    @include flex-align-center(10);
+  }
+
+  &__social {
+    @include flex-center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 1px solid rgba($white, .24);
+    transition: background-color .4s, border .4s;
+
+    &:hover {
+      svg path {
+        fill: rgba($white, .4);
+      }
+    }
+
+    &:focus {
+      background-color: $accent;
+      border-color: transparent;
+
+      svg path {
+        fill: $white;
+      }
+    }
+  }
+
+  &__bottom {
+    @include flex-between-center-gap(30);
+  }
+
+  &__list {
+    @include flex-align-center(16);
+  }
+
+  &__link {
+    color: rgba($white, .7);
+    padding: 2px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: border .4s, color .4s;
+
+    &:hover {
+      color: $white;
+    }
+
+    &:focus {
+
+    }
+  }
+
+  &__up {
+    @include flex-align-center(7);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 2px;
+    transition: color .4s, border .4s;
+
+    &:hover {
+      color: $accent;
+
+      svg {
+        transform: translateY(-3px);
+      }
+    }
+
+    &:focus {
+      border-color: $accent;
+      color: $white;
+
+      svg {
+        transform: translateY(-3px);
+      }
+    }
+  }
+}

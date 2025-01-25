@@ -1,0 +1,136 @@
+.roadmap {
+  &__top {
+    max-width: 610px;
+    text-align: center;
+    margin: 0 auto 70px;
+    @include r($tablet) {
+      margin-bottom: 65px;
+    }
+  }
+
+  &__list {
+    @include flex-column(0);
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__item {
+    @include flex-between(30);
+    padding-bottom: 40px;
+    position: relative;
+    @media (max-width: 720px) {
+      flex-direction: column;
+      gap: 25px;
+      padding-bottom: 55px;
+    }
+
+    &:not(:last-child) {
+      &::before {
+        @include pseudo;
+        height: 100%;
+        width: 1px;
+        left: 3px;
+        background-color: rgba($black, .15);
+      }
+    }
+
+    &:first-child {
+      &::before {
+        top: 37px;
+        height: 79%;
+        @include r($tablet) {
+          top: 31px;
+          height: 89%;
+        }
+        @media (max-width: 640px) {
+          height: 96%;
+        }
+      }
+    }
+
+    &:nth-child(4)::before {
+      height: 128%;
+      @media (max-width: 640px) {
+        height: 105%;
+      }
+      @include r($sm) {
+        height: 110%;
+      }
+    }
+  }
+
+  &__left {
+    @include flex-align-center(10);
+    align-self: flex-start;
+    max-width: 225px;
+    width: 100%;
+    flex: 1 0 auto;
+    @media (max-width: 720px) {
+      max-width: 400px;
+    }
+
+    &::before {
+      content: "";
+      display: flex;
+      border-radius: 50%;
+      background-color: rgba($black, .6);
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  &__name {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+    flex: 1 1;
+    color: $black;
+    @include r($phone) {
+      font-size: 17px;
+    }
+
+    span {
+      color: rgba($black, .6);
+    }
+
+    &.here {
+      @include bg;
+      flex: 1 1;
+      margin-top: -12px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      background-image: url("../../images/decor-roadmap.png");
+      color: $white;
+
+      span {
+        color: rgba($white, .6);
+      }
+    }
+  }
+
+  &__plans {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    max-width: 615px;
+    @media (max-width: 720px) {
+      margin-left: 16px;
+    }
+  }
+
+  &__plan {
+    @include flex-align-center(10);
+    padding: 8px 16px;
+    border-radius: 62px;
+    border: 1px solid rgba(#E0E0E0, .7);
+    font-size: 16px;
+    @media (max-width: 640px) {
+      gap: 7px;
+    }
+    @include r($phone) {
+      font-size: 15px;
+    }
+  }
+}

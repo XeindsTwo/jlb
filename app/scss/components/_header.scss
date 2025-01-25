@@ -1,0 +1,154 @@
+.header {
+  padding: 16px 0 70px;
+  @include r($phone) {
+    padding-bottom: 55px;
+  }
+
+  &__inner {
+    @include flex-between-center-gap(30);
+    @media (max-width: 1060px) {
+      position: relative;
+      z-index: 50;
+    }
+  }
+
+  &__nav {
+    @media (max-width: 1060px) {
+      display: none;
+    }
+
+    &.mobile {
+      display: none;
+      @media (max-width: 1060px) {
+        display: block;
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+
+    a {
+      border: 1px solid transparent;
+      border-radius: 4px;
+      transition: opacity .4s, border .4s;
+
+      &:hover {
+        opacity: .7;
+      }
+
+      &:focus {
+        border-color: $white;
+      }
+    }
+  }
+
+  &__list {
+    @include flex-align-center(24);
+    @media (max-width: 1060px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+    }
+    @include r($tablet) {
+      gap: 28px;
+    }
+  }
+
+  &__link {
+    @include flex-align-center(7);
+    color: rgba($white, .6);
+    border: 1px solid transparent;
+    padding: 1px 2px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: color .4s, border .4s;
+    @media (max-width: 1060px) {
+      font-size: 20px;
+    }
+    @include r($tablet) {
+      font-size: 18px;
+    }
+    @include r($phone) {
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: $white;
+
+      svg path {
+        fill-opacity: 1;
+      }
+    }
+
+    &:focus {
+      border-color: $accent;
+      color: $white;
+
+      svg path {
+        fill: $white;
+        fill-opacity: 1;
+      }
+    }
+
+    &.active {
+      color: $white;
+      pointer-events: none;
+
+      svg path {
+        fill-opacity: 1;
+      }
+    }
+
+    &.whitepaper {
+      @include r($phone) {
+        svg {
+          transform: translateY(-1px);
+        }
+      }
+    }
+  }
+
+  &__right {
+    @include flex-align-center(20);
+  }
+
+  &__btn {
+    @media (max-width: 1060px) {
+      align-self: stretch;
+    }
+    @include r($sm) {
+      align-self: center;
+    }
+    @include r($phone) {
+      padding: 8px 14px;
+    }
+  }
+
+  &__mobile {
+    @include flex-column(30);
+    padding: 110px 15px 30px;
+    display: none;
+    pointer-events: none;
+    user-select: none;
+    position: fixed;
+    z-index: 25;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #11111d;
+    transform: translateX(100%);
+    height: 100vh;
+    transition: transform .7s ease-in-out;
+    @media (max-width: 1060px) {
+      display: flex;
+      align-items: flex-start;
+      pointer-events: auto;
+      user-select: auto;
+    }
+
+    &.active {
+      transform: translateX(0);
+    }
+  }
+}
